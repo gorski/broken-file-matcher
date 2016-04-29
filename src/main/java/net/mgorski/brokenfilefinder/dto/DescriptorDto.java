@@ -9,48 +9,68 @@ import java.util.Arrays;
  */
 public class DescriptorDto {
 
-    private byte[] bytesFromStart = new byte[Constants.PROBE_SIZE];
-    private byte[] bytesFromEnd = new byte[Constants.PROBE_SIZE];
+    private byte[] bytesFromStart;
+    private byte[] bytesFromEnd;
 
-    private byte[] bytesFromFFD8 = new byte[Constants.PROBE_SIZE];
+    private byte[] bytesFromFFD8;
 
-    private byte[] bytesFromOffset = new byte[Constants.PROBE_SIZE];
-    private byte[] bytesFromEndOffset = new byte[Constants.PROBE_SIZE];
+    private byte[] bytesFromOffset;
+    private byte[] bytesFromEndOffset;
 
     public byte[] getBytesFromStart() {
         return bytesFromStart;
-    }
-
-    public void setBytesFromStart(byte[] bytesFromStart) {
-        this.bytesFromStart = bytesFromStart;
-    }
-
-    public byte[] getBytesFromFFD8() {
-        return bytesFromFFD8;
-    }
-
-    public void setBytesFromFFD8(byte[] bytesFromFFD8) {
-        this.bytesFromFFD8 = bytesFromFFD8;
     }
 
     public byte[] getBytesFromEnd() {
         return bytesFromEnd;
     }
 
-    public void setBytesFromEnd(byte[] bytesFromEnd) {
-        this.bytesFromEnd = bytesFromEnd;
+    public byte[] getBytesFromFFD8() {
+        return bytesFromFFD8;
     }
 
     public byte[] getBytesFromOffset() {
         return bytesFromOffset;
     }
 
-    public void setBytesFromOffset(byte[] bytesFromOffset) {
-        this.bytesFromOffset = bytesFromOffset;
-    }
-
     public byte[] getBytesFromEndOffset() {
         return bytesFromEndOffset;
+    }
+
+    public boolean isBytesFromStart() {
+        return bytesFromStart != null;
+    }
+
+    public boolean isBytesFromEnd() {
+        return bytesFromEnd!= null;
+    }
+
+    public boolean isBytesFromFFD8() {
+        return bytesFromFFD8!= null;
+    }
+
+    public boolean isBytesFromOffset() {
+        return bytesFromOffset!= null;
+    }
+
+    public boolean isBytesFromEndOffset() {
+        return bytesFromEndOffset!= null;
+    }
+
+    public void setBytesFromStart(byte[] bytesFromStart) {
+        this.bytesFromStart = bytesFromStart;
+    }
+
+    public void setBytesFromEnd(byte[] bytesFromEnd) {
+        this.bytesFromEnd = bytesFromEnd;
+    }
+
+    public void setBytesFromFFD8(byte[] bytesFromFFD8) {
+        this.bytesFromFFD8 = bytesFromFFD8;
+    }
+
+    public void setBytesFromOffset(byte[] bytesFromOffset) {
+        this.bytesFromOffset = bytesFromOffset;
     }
 
     public void setBytesFromEndOffset(byte[] bytesFromEndOffset) {

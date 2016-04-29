@@ -32,7 +32,7 @@ public class DirectoryScanner {
         for (File file : files) {
             L.debug("Found file: {}", file);
             FileDto dto = new FileDto();
-            dto.setPath(file.getPath());
+            dto.setPath(file.getParent());
             dto.setFilename(file.getName());
             result.add(dto);
         }

@@ -1,5 +1,8 @@
 package net.mgorski.brokenfilefinder.dto;
 
+import java.beans.Transient;
+import java.io.File;
+
 /**
  * @author Marcin Górski <mg@mgorski.net>
  */
@@ -36,6 +39,11 @@ public class FileDto {
 
     public DescriptorDto getDescriptor() {
         return descriptor;
+    }
+
+    @Transient
+    public String getFullPath(){
+        return this.getPath() + File.separator + this.getFilename();
     }
 
     @Override

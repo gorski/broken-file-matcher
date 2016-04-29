@@ -22,10 +22,15 @@ public class FileComparator {
         compare(d1.getBytesFromEndOffset(), d2.getBytesFromEndOffset(), match);
 
 
-        return match.getMatch() / match.getTotal() * 100;
+        return  match.getTotal() == 0. ? 0. :match.getMatch() / match.getTotal() * 100;
     }
 
     private void compare(byte[] first, byte[] second, ResultDto match) {
+
+        if (first == null || second == null){
+            return;
+        }
+
 
         for (int i = 0; i < first.length && i < second.length; i++) {
             if (first[i] == second[i]) {
